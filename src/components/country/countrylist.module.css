@@ -1,0 +1,17 @@
+.card_wrapper {
+    padding: 10px 10px 2px 10px;
+    background-color: #fff;
+    border: 1px solid #dedbdb;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .card_image {
+    width: 130px;
+    height: 70px;
+  }
+  .card_para {
+    text-align: center;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  
