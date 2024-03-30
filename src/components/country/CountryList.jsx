@@ -16,7 +16,8 @@ const CountryList = () => {
           const response = await axios.get(
             "https://restcountries.com/v3.1/all"
           );
-          if (response.status === 200 && response.statusText === "OK") {
+        //   console.log("Response Data : ", response);
+          if (response.status === 200) {
             localStorage.setItem(
               "countryDetails",
               JSON.stringify(response.data)
@@ -24,6 +25,7 @@ const CountryList = () => {
             setCountryList(response.data);
           } else {
             console.error("Response Data Not Found!");
+            return false;
           }
         }
       } catch (error) {
