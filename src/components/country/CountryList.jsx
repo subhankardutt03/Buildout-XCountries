@@ -9,6 +9,8 @@ const CountryList = () => {
       const response = await axios.get("https://restcountries.com/v3.1/all");
       if (response.status === 200) {
         setCountryList(response.data);
+      } else {
+        console.error("Failed to fetch data", response.status);
       }
     } catch (error) {
       console.log(error);
