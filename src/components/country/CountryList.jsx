@@ -4,22 +4,21 @@ import styles from "./countrylist.module.css";
 
 const CountryList = () => {
   const [countryList, setCountryList] = useState([]);
-    const fetchAPI = async () => {
-      try {
-        const response = await axios.get("https://restcountries.com/v3.1/all");
-        console.log("response", response);
-        if (response.status === 200) {
-          setCountryList(response.data);
-        }
-      } catch (error) {
-        console.log("Error fetching countries :", error);
-        console.error("Error fetching countries : ", error);
+  const fetchAPI = async () => {
+    try {
+      const response = await axios.get("https://restcountries.com/v3.1/all");
+      if (response.status === 200) {
+        setCountryList(response.data);
       }
-    };
+    } catch (error) {
+      console.log(error);
+      console.error(error);
+    }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchAPI();
-  },[]);
+  }, []);
 
   return (
     <div className="container mt-3">
